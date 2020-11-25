@@ -41,6 +41,8 @@ class Dog
 end
 
 
+
+
 doggo = Dog.new("Roy", "Labrador", 8)
 doggo.walk(2)
 doggo.walk(1)
