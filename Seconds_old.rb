@@ -21,7 +21,8 @@ while running == 1
     while error == 0
 
         print "Enter your DOB: DDMMYY: "
-        dob = gets.chomp.to_i
+        # get from user, remove non numerical data and 
+        dob = gets.tr('^0-9', '').to_i
     
         checknotstr(dob)
         print "dob is: #{dob} \n"
