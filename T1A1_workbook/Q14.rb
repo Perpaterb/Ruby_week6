@@ -27,9 +27,6 @@
 For loop though numbers 1 to 100 
 1. for 
 
-
-
-
 #run though numbers 1 to 100 (number)
 for i in (1..100)
     #if any tester var set to 0

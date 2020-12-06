@@ -43,6 +43,7 @@
 allergic_to = []
 num = 128
 allergies = ["cats", "pollen", "chocolate", "tomatoes", "strawberries", "shellfish", "peanuts", "eggs"]
+puts `clear`
 print "Enter your allergie score: "
 users_score = gets.tr('^0-9', '').to_i
 for i in (0..7)
@@ -57,6 +58,7 @@ if users_score != 0
     exit
 end
 while true
+    puts `clear`
     puts "How would you like the results?"
     puts "A: Select an allergie from the list and see if you are allergic to it"
     puts "or" 
@@ -66,27 +68,28 @@ while true
     print "Please enter A, B or C: "
     user_view = gets.chomp.upcase
     if user_view == "A"
-        game = 1
-        while game == 1
-            puts "" 
+        puts `clear`
+        go = 1
+        while go == 1
             puts ""
-            puts "" 
             puts "1.cats   2.pollen   3.chocolate   4.tomatoes   5.strawberries   6.shellfish   7.peanuts   8.eggs"
             print "Enter the number next to the corresponding allergie or '9' to go back: "
             user_select_num = (gets.tr('^0-9', '').to_i-1)
             if user_select_num == 8
-                game = 0
+                go = 0
             else
                 len = (allergic_to.length()-1)
                 hit = 0
                 for i in (0..len)
                     if user_select_num == allergic_to[i]
                         hit = 1 
+                        puts `clear`
                         print "Yes you are allergic to "
                         puts allergies[user_select_num]                     
                     end
                 end
                 if hit == 0
+                    puts `clear`
                     print "No you are not allergic to "
                     puts allergies[user_select_num]
                 end
@@ -94,7 +97,8 @@ while true
 
         end 
     elsif user_view == "B"
-        print "you are allergic to: "
+        puts `clear`
+        print "You are allergic to: "
         len = (allergic_to.length()-1)
         for i in (0..len)
             print allergies[allergic_to[i]]
@@ -107,7 +111,7 @@ while true
     elsif user_view == "C"
         exit
     else
-        puts "invalid selection"
+        puts "Invalid selection"
     end
 end
 
